@@ -1,0 +1,11 @@
+.grid-x.grid-margin-x
+  .cell.small-6
+    %p#notice= notice
+    %p
+      %strong Name:
+      = @room.name
+    = link_to 'Edit', edit_room_path(@room)
+    |
+    = link_to 'Back', rooms_path
+  .cell.small-6
+    to the right

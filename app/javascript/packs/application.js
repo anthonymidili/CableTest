@@ -15,3 +15,18 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+// Foundation setup.
+import Foundation from 'foundation-sites'
+$(document).on('turbolinks:load', function() {
+  $(document).foundation()
+});
+
+// Custom JavaScripts.
+// import 'packs/sites'
+
+// Custom stylesheets.
+import 'src/application'
+
+// images and fonts.
+require.context('../images', true)
