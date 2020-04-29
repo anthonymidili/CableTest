@@ -1,0 +1,35 @@
+.top-bar
+  .title-bar-left
+    .title-bar-title
+      .app-name= link_to 'CableTest', root_path
+  .title-bar-right
+    %span{data: {hide_for: 'medium', responsive_toggle: 'responsive-menu'}}
+      %span.menu-icon{data: {toggle: true}}
+  #responsive-menu.top-bar-right
+    %ul.menu.mainmenu.vertical.medium-horizontal{data: {responsive_menu: 'accordion medium-dropdown'}}
+      - if user_signed_in?
+        %li
+          = link_to edit_user_registration_path do
+            %i.fa.fa-cog
+            User
+        %li
+          = link_to destroy_user_session_path, method: :delete do
+            %i.fa.fa-sign-out-alt
+            Sign out
+
+      - else
+        %li
+          = link_to new_user_session_path do
+            %i.fa.fa-sign-in-alt
+            Log in
+        %li
+          = link_to new_user_registration_path do
+            %i.fa.fa-user-plus
+            Sign up
+
+        -# dropdown menu
+        -# %li
+        -#   = link_to 'dropdown link', '#', remote: true
+        -#   %ul.menu.vertical
+        -#     %li= link_to 'link#1', '#'
+        -#     %li= link_to 'link#2', '#'

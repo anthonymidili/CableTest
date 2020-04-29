@@ -12,5 +12,6 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .grid-container
+      = render 'layouts/topbar'
       = render 'messages/flash_messages'
       = yield
