@@ -1,0 +1,14 @@
+.messages
+  .grid-x
+    .small-12.cell
+      - if flash[:alert]
+        .alert.callout{data: {closable: true}}
+          = sanitize(flash[:alert])
+          %button.close-button{aria: {label: 'Dismiss alert'}, data: {close: true}, type: 'button'}
+            %span{aria: {hidden: 'true'}} ×
+
+      - if flash[:notice]
+        .primary.callout{data: {closable: true}}
+          = sanitize(flash[:notice])
+          %button.close-button{aria: {label: 'Dismiss alert'}, data: {close: true}, type: 'button'}
+            %span{aria: {hidden: 'true'}} ×

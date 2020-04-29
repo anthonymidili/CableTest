@@ -11,4 +11,6 @@
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    .grid-container= yield
+    .grid-container
+      = render 'messages/flash_messages'
+      = yield
