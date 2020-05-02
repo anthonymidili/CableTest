@@ -11,12 +11,13 @@ consumer.subscriptions.create("RoomChannel", {
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
-    $("#msg_room_" + data.room_id).append(
+    $("#msg_room_" + data.room_id).prepend(
       '<div class="message callout alert">' +
       data.email +
       " wrote: " +
       data.content +
       '</div>'
     )
+    document.getElementById("message_content").value = '';
   }
 });
