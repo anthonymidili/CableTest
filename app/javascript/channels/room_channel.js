@@ -18,6 +18,5 @@ consumer.subscriptions.create("RoomChannel", {
       data.content +
       '</div>'
     )
-    document.getElementById("message_content").value = '';
   }
 });
