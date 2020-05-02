@@ -1,0 +1,6 @@
+- if message.persisted?
+  .message.callout.warning
+    = message.user.email
+    wrote:
+    = message.content
+    
