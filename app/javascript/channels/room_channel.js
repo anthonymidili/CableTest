@@ -11,7 +11,7 @@ consumer.subscriptions.create("RoomChannel", {
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
-    $('#msg').append(
+    $("#msg_room_" + data.room_id).append(
       '<div class="message callout alert">' +
       data.email +
       " wrote: " +

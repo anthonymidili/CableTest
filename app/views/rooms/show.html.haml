@@ -10,7 +10,7 @@
       = f.submit
 
     %h3 Messages
-    #msg
+    %div{id: "msg_room_#{@room.id}"}
       = render @messages
 
     = link_to 'Edit', edit_room_path(@room)

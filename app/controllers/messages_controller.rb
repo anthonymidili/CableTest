@@ -10,7 +10,8 @@ class MessagesController < ApplicationController
     if @message.save
       ActionCable.server.broadcast "room_channel",
       email: @message.user.email,
-      content: @message.content
+      content: @message.content,
+      room_id: @room.id
     else
 
     end
