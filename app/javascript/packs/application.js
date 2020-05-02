@@ -29,4 +29,4 @@ $(document).on('turbolinks:load', function() {
 import 'src/application'
 
 // images and fonts.
-require.context('../images', true)
+// require.context('../images', true)
