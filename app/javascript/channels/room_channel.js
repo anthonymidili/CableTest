@@ -1,5 +1,7 @@
 import consumer from "./consumer"
 
+var audioUrl = new Audio("https://notificationsounds.com/soundfiles/acc3e0404646c57502b480dc052c4fe1/file-sounds-1140-just-saying.mp3");
+
 consumer.subscriptions.create("RoomChannel", {
   connected() {
     // Called when the subscription is ready for use on the server
@@ -18,5 +20,8 @@ consumer.subscriptions.create("RoomChannel", {
       data.content +
       '</div>'
     )
+
+    // SIMPLE EXEMPLE
+    audioUrl.play();
   }
 });
