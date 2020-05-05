@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :rooms, dependent: :destroy
   has_many :messages, dependent: :destroy
+
+  scope :other_users, -> (user) { where.not(id: user) }
 end

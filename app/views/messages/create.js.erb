@@ -1,1 +1,2 @@
-document.getElementById("message_content").value = '';
+$("#msg_room_<%= @room.id %>").prepend('<%= j render @message %>');
+$("#message_content").val('');
