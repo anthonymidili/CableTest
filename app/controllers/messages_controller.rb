@@ -38,10 +38,11 @@ class MessagesController < ApplicationController
     users = User.other_users(current_user)
 
     users.each do |user|
-      RoomChannel.broadcast_to user,
-      email: @message.user.email,
-      content: @message.content,
-      room_id: @room.id
+      SendMessageJob.perform_later(user, @message, @room)
+      # RoomChannel.broadcast_to user,
+      # email: @message.user.email,
+      # content: @message.content,
+      # room_id: @room.id
     end
   end
 end
