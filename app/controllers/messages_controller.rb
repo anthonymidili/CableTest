@@ -11,11 +11,11 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        # broadcast to other users.
-        broadcast_to_other_users
+        # Broadcast to other users in a background job.
+        current_user.send_messages(@message, @room)
 
         format.html { redirect_to @room }
-        # display message current user broadcasted to all other users
+        # Display message current user broadcasted to all other users
         format.js
       else
         format.html { render @room }
@@ -31,18 +31,5 @@ class MessagesController < ApplicationController
 
   def set_room
     @room = Room.find(params[:room_id])
-  end
-
-  # this can be placed inside an active job
-  def broadcast_to_other_users
-    users = User.other_users(current_user)
-
-    users.each do |user|
-      SendMessageJob.perform_later(user, @message, @room)
-      # RoomChannel.broadcast_to user,
-      # email: @message.user.email,
-      # content: @message.content,
-      # room_id: @room.id
-    end
   end
 end
