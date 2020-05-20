@@ -4,3 +4,12 @@
     color: #666;
   }
 }
+
+.callout {
+  &.message {
+    background-color: #fbf6ec;
+  }
+  &.new_message {
+    background-color: #e1f7ef !important;
+  }
+}

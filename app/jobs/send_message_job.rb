@@ -3,9 +3,17 @@ class SendMessageJob < ApplicationJob
   sidekiq_options retry: 3
 
   def perform(user, message, room)
+
     RoomChannel.broadcast_to user,
-    email: message.user.email,
-    content: message.content,
+    message_partial: render_message(message),
+    message_id: message.id,
     room_id: room.id
+  end
+
+  private
+
+  def render_message(message)
+    MessagesController.render partial: 'messages/message',
+    locals: { message: message }
   end
 end

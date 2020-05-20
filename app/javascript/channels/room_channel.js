@@ -13,15 +13,15 @@ consumer.subscriptions.create("RoomChannel", {
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
-    $("#msg_room_" + data.room_id).prepend(
-      '<div class="message callout alert">' +
-      data.email +
-      " wrote: " +
-      data.content +
-      '</div>'
-    )
 
-    // SIMPLE EXEMPLE
-    audioUrl.play();
+    // Only do if in the corect room.
+    if ($("#msg_room_" + data.room_id).length) {
+      // Prepend messages/message partial
+      $("#msg_room_" + data.room_id).prepend(data.message_partial);
+      // Add "new_message" class.
+      $('#message_' + data.message_id).addClass('new_message');
+      // Play audio.
+      audioUrl.play();
+    }
   }
 });
