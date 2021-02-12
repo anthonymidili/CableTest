@@ -1,6 +1,11 @@
 {
   "name": "CableTest",
+  "version": "0.1.0",
   "private": true,
+  "main": "index.js",
+  "repository": "https://github.com/anthonymidili/CableTest.git",
+  "author": "Anthony Midili <tonywinslow@yahoo.com>",
+  "license": "MIT",
   "dependencies": {
     "@rails/actioncable": "^6.0.2-2",
     "@rails/activestorage": "^6.0.0",
@@ -12,8 +17,12 @@
     "webpack": "^4.43.0",
     "what-input": "^5.2.7"
   },
-  "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3.10.3"
+  },
+  "engines": {
+    "yarn": "1.22.x",
+    "node": "15.x",
+    "npm": "7.x"
   }
 }
