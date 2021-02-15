@@ -30,3 +30,6 @@ import 'src/application'
 
 // images and fonts.
 // require.context('../images', true)
+
+// sounds.
+require.context('../audio', true)
