@@ -1,7 +1,11 @@
 .top-bar {
-  li > a {
+  a {
     background: $topbar-background !important;
-    color: #666;
+    color: #ffffff !important;
+    font-size: 130%;
+    &:hover {
+      color: #bfbfbf !important;
+    }
   }
 }
 

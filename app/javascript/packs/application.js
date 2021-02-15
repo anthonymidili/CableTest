@@ -33,3 +33,6 @@ import 'src/application'
 
 // sounds.
 require.context('../audio', true)
+
+// fontawesome setup.
+import '@fortawesome/fontawesome-free/css/all'

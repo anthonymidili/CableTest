@@ -1,5 +1,7 @@
-%h1 Editing Room
-= render 'form', room: @room
-= link_to 'Show', @room
-|
-\#{link_to 'Back', rooms_path}
+.grid-x
+  .cell
+    %h1 Editing Room
+    = render 'form', room: @room
+    = link_to 'Show', @room
+    |
+    \#{link_to 'Back', rooms_path}
