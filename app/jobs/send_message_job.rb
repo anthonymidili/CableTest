@@ -14,6 +14,6 @@ class SendMessageJob < ApplicationJob
 
   def render_message(message)
     MessagesController.render partial: 'messages/message',
-    locals: { message: message }
+    locals: { message: message, current_user: nil }
   end
 end

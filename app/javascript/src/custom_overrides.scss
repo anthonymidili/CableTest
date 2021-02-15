@@ -5,11 +5,22 @@
   }
 }
 
-.callout {
-  &.message {
-    background-color: #fbf6ec;
-  }
+.message.callout {
+  width: 90%;
+  background-color: #f2f4b5;
   &.new_message {
-    background-color: #e1f7ef !important;
+    background-color: #e1f7ef;
   }
+  &.author {
+    background-color: #b9c6fa;
+    margin-left: 10%;
+  }
+  .user {
+    background-color: white;
+    padding: 3px;
+  }
+}
+
+.center {
+  text-align: center;
 }

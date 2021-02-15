@@ -1,18 +1,15 @@
 .grid-x.grid-margin-x
   .cell
     %p#notice= notice
-    %p
-      %strong Name:
+    %h1
       = @room.name
+      Room
 
     = form_for [@room, @message], remote: true do |f|
+      = f.label :content, 'New Message'
       = f.text_field :content
-      = f.submit
+      = f.submit class: 'button'
 
     %h3 Messages
     %div{id: "msg_room_#{@room.id}"}
       = render @messages
-
-    = link_to 'Edit', edit_room_path(@room)
-    |
-    = link_to 'Back', rooms_path
