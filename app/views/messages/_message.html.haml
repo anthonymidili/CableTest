@@ -1,6 +1,5 @@
 - if message.persisted?
   .center
-    about
     = time_ago_in_words(message.created_at)
     ago
   .message.callout{id: "message_#{message.id}", class: message_author(message, current_user)}
