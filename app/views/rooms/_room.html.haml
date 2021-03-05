@@ -1,13 +1,14 @@
 .cell.medium-6
   .callout
-    .float-right
-      %ul.menu.simple
-        %li
-          = link_to edit_room_path(room) do
-            %i.fas.fa-edit
-        %li
-          = link_to room, method: :delete, data: { confirm: 'Are you sure?' }, class: 'red' do
-            %i.fas.fa-trash
+    - if room_creator?(room)
+      .float-right
+        %ul.menu.simple
+          %li
+            = link_to edit_room_path(room) do
+              %i.fas.fa-edit
+          %li
+            = link_to room, method: :delete, data: { confirm: 'Are you sure?' }, class: 'red' do
+              %i.fas.fa-trash
     = link_to room do
       %h5= room.name
-      = pluralize(room.messages.count, "Message")  
+      = pluralize(room.messages.count, "Message")

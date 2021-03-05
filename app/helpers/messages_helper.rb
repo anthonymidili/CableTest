@@ -1,9 +1,9 @@
 module MessagesHelper
-  def message_author?(message, current_user)
-    "author" if message.user == current_user
+  def message_author?(message)
+    message.user == current_user
   end
 
-  def message_background(message, current_user)
+  def message_background(message)
     if message.user == current_user
       "author"
     else
