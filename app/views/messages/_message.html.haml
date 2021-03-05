@@ -2,8 +2,8 @@
   .center
     = time_ago_in_words(message.created_at)
     ago
-  .message.callout{id: "message_#{message.id}", class: message_author(message, current_user)}
-    - unless message_author(message, current_user)
+  .message.callout{id: "message_#{message.id}", class: message_background(message, current_user)}
+    - unless message_author?(message, current_user)
       %span.user= message.user.email
       %br/
     = message.content

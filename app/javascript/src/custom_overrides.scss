@@ -9,15 +9,84 @@
   }
 }
 
+// message background colors
+$author-color: #d7def9;
+$color-0: #f4b5e9;
+$color-1: #f4b5b5;
+$color-2: #caf4b4;
+$color-3: #f2f4b5;
+$color-4: #b5b7f4;
+$color-5: #b5ddf4;
+$color-6: #b5f4da;
+$color-7: #bff4b5;
+$color-8: #f4d5b5;
+$color-9: #f4beb4;
+
 .message.callout {
   width: 90%;
-  background-color: #f2f4b5;
-  &.new_message {
-    background-color: #e1f7ef;
-  }
   &.author {
-    background-color: #b9c6fa;
+    background-color: $author-color;
     margin-left: 10%;
+  }
+  &.new_message.background_0 {
+    background-color: $color-0;
+  }
+  &.new_message.background_1 {
+    background-color: $color-1;
+  }
+  &.new_message.background_2 {
+    background-color: $color-2;
+  }
+  &.new_message.background_3 {
+    background-color: $color-3;
+  }
+  &.new_message.background_4 {
+    background-color: $color-4;
+  }
+  &.new_message.background_5 {
+    background-color: $color-5;
+  }
+  &.new_message.background_6 {
+    background-color: $color-6;
+  }
+  &.new_message.background_7 {
+    background-color: $color-7;
+  }
+  &.new_message.background_8 {
+    background-color: $color-8;
+  }
+  &.new_message.background_9 {
+    background-color: $color-9;
+  }
+  &.background_0 {
+    background-color: lighten($color-0, 12%);
+  }
+  &.background_1 {
+    background-color: lighten($color-1, 12%);
+  }
+  &.background_2 {
+    background-color: lighten($color-2, 12%);
+  }
+  &.background_3 {
+    background-color: lighten($color-3, 12%);
+  }
+  &.background_4 {
+    background-color: lighten($color-4, 12%);
+  }
+  &.background_5 {
+    background-color: lighten($color-5, 12%);
+  }
+  &.background_6 {
+    background-color: lighten($color-6, 12%);
+  }
+  &.background_7 {
+    background-color: lighten($color-7, 12%);
+  }
+  &.background_8 {
+    background-color: lighten($color-8, 12%);
+  }
+  &.background_9 {
+    background-color: lighten($color-9, 12%);
   }
   .user {
     background-color: white;

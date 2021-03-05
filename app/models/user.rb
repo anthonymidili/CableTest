@@ -15,4 +15,8 @@ class User < ApplicationRecord
       SendMessageJob.perform_later(user, message, room)
     end
   end
+
+  def last_digit
+    id.digits[0]
+  end
 end
