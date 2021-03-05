@@ -1,6 +1,9 @@
 .grid-x
   .cell
     %p#notice= notice
+    %div{id: "room_id_#{@room.id}",
+    data: { room_id: "#{@room.id}",
+    current_user_id: current_user.id }}
     %h1
       = @room.name
       Room

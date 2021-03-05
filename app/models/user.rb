@@ -9,11 +9,9 @@ class User < ApplicationRecord
 
   scope :other_users, -> (user) { where.not(id: user) }
 
-  def send_messages(message, room)
+  def send_broadcast(room, message)
     # "self" is the current_user.
-    User.other_users(self).each do |user|
-      SendMessageJob.perform_later(user, message, room)
-    end
+    SendMessageJob.perform_later(room, message, self)
   end
 
   def last_digit

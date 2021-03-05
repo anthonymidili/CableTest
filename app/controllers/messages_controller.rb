@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
     respond_to do |format|
       if @message.save
         # Broadcast to other users in a background job.
-        current_user.send_messages(@message, @room)
+        current_user.send_broadcast(@room, @message)
 
         format.html { redirect_to @room }
         # Display message current user broadcasted to all other users
