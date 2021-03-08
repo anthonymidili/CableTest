@@ -11,4 +11,4 @@
               %i.fas.fa-trash
     = link_to room do
       %h5= room.name
-      = pluralize(room.users.count, "Active User")
+      = render 'rooms/active_users', room: room

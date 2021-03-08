@@ -1,2 +1,5 @@
 $("#msg_room_<%= @room.id %>").prepend('<%= j render @message %>');
+// Update active users count.
+$("#active_users_count_room_" + <%= @room.id %>).html(<%= @room.users.count %>);
+// Clear message box.
 $("#message_content").val('');
