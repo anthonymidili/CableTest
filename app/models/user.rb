@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # current room user is in.
+  belongs_to :room, optional: true
+
   has_many :rooms, dependent: :destroy
   has_many :messages, dependent: :destroy
 
