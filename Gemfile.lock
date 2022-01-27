@@ -189,7 +189,7 @@ GEM
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
     sexp_processor (4.15.3)
-    sidekiq (6.2.1)
+    sidekiq (6.4.0)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
@@ -246,7 +246,7 @@ DEPENDENCIES
   rails (~> 6.1.2)
   redis (~> 4.1)
   selenium-webdriver
-  sidekiq (~> 6.2.1)
+  sidekiq (~> 6.4.0)
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
