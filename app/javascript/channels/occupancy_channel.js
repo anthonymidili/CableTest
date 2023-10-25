@@ -1,6 +1,6 @@
 import consumer from "./consumer"
 
-$(document).on('turbolinks:load', function() {
+$(document).on('turbo:load', function() {
   consumer.subscriptions.create("OccupancyChannel", {
     connected() {
       // Called when the subscription is ready for use on the server

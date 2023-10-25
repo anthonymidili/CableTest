@@ -1,4 +1,5 @@
 - if message.persisted?
+  = audio_tag "bing.mp3", id: "bing-audio"
   .center
     = time_ago_in_words(message.created_at)
     ago

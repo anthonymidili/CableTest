@@ -8,22 +8,27 @@
   "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.2",
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^7.3.0",
     "@rails/actioncable": "^6.0.2-2",
     "@rails/activestorage": "^6.0.0",
-    "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "5.1.1",
+    "autoprefixer": "^10.4.13",
+    "coffeescript": "^2.7.0",
+    "esbuild": "^0.19.5",
     "foundation-sites": "^6.6.3",
     "jquery": "^3.5.0",
-    "turbolinks": "^5.2.0",
-    "webpack": "^4.43.0",
+    "math": "^0.0.3",
+    "postcss": "^8.4.20",
+    "sass": "^1.69.4",
     "what-input": "^5.2.7"
-  },
-  "devDependencies": {
-    "webpack-dev-server": "^3.10.3"
   },
   "engines": {
     "yarn": "1.22.x",
-    "node": "12.x",
-    "npm": "7.x"
+    "node": "18.x",
+    "npm": "9.x"
+  },
+  "scripts": {
+    "build:css": "sass ./app/assets/stylesheets/application.sass.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets"
   }
 }

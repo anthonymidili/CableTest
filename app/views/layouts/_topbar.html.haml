@@ -10,25 +10,25 @@
       - if user_signed_in?
         %li
           = link_to rooms_path do
-            %i.fas.fa-person-booth
+            %i.fa-solid.fa-person-booth
             Rooms
         %li
           = link_to edit_user_registration_path do
-            %i.fa.fa-cog
+            %i.fa-regular.fa-cog
             User
         %li
           = link_to destroy_user_session_path, method: :delete do
-            %i.fas.fa-sign-out-alt
+            %i.fa-solid.fa-sign-out-alt
             Sign out
 
       - else
         %li
           = link_to new_user_session_path do
-            %i.fas.fa-sign-in-alt
+            %i.fa-solid.fa-sign-in-alt
             Log in
         %li
           = link_to new_user_registration_path do
-            %i.fa.fa-user-plus
+            %i.fa-regular.fa-user-plus
             Sign up
 
         -# dropdown menu
